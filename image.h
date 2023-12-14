@@ -49,23 +49,7 @@ Image<Pixel>::Image()
             }
         }
     }
-    // bool operator!(Image& obj)
-    // {
-    //     for(int i=0;i<obj.height;i++)
-    //     {
-    //         for(int j=0;j<obj.width;j++)
-    //         {
-    //             if(obj.Picture[i][j]==1)
-    //             {
-    //                 obj.Picture[i][j]=0;
-    //             }
-    //             else{
-    //                 obj.Picture[i][j]==1;
-    //             }
-    //         }
-    //     }
-    //     return 0;
-    // }
+  
     template <class Pixel>
     void Image<Pixel>::picLoad()
     {
@@ -90,3 +74,29 @@ Image<Pixel>::Image()
             std::cout<<"\n";
         }
     }
+    
+
+
+    
+
+    
+
+
+
+      // bool operator!(Image& obj)
+    // {
+    //     for(int i=0;i<obj.height;i++)
+    //     {
+    //         for(int j=0;j<obj.width;j++)
+    //         {
+    //             if(obj.Picture[i][j]==1)
+    //             {
+    //                 obj.Picture[i][j]=0;
+    //             }
+    //             else{
+    //                 obj.Picture[i][j]==1;
+    //             }
+    //         }
+    //     }
+    //     return 0;
+    // }
