@@ -31,11 +31,47 @@ class Image{
             Picture= new Pixel*[height];
             for(int i=0;i<height;i++)
             {
-                Picture=new Pixel[width];
+                Picture[i]=new Pixel[width];
             }
-            
         }
     }
-   
-
+    friend bool operator!(Image& obj)
+    {
+        for(int i=0;i<obj.height;i++)
+        {
+            for(int j=0;j<obj.width;j++)
+            {
+                if(obj.Picture[i][j]==1)
+                {
+                    obj.Picture[i][j]=0;
+                }
+                else{
+                    obj.Picture[i][j]==1;
+                }
+            }
+        }
+        return 0;
+    }
+    void picLoad()
+    {
+        std::cout<<"Ucitati templejtSliku\n";
+        for(int i=0;i<height;i++)
+        {
+            for(int j=0;j<width;j++)
+            {
+                std::cin>>Picture[i][j];
+            }
+        }
+    }
+    void picShow()
+    {
+        for(int i=0;i<height;i++)
+        {
+            for(int j=0;j<width;j++)
+            {
+                std::cout<<Picture[i][j]<<" ";
+            }
+            std::cout<<"\n";
+        }
+    }
 };
