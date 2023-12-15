@@ -1,10 +1,11 @@
 #include <iostream>
+#include <fstream>
 class Color{
 private:
     int R;
     int G;
     int B;
-    public:
+public:
     Color();
     Color(int r,int g,int b);
     ~Color();

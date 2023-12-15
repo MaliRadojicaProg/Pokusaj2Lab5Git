@@ -20,12 +20,14 @@ Color& Color::operator=(Color& obj)
 }
 std::istream& operator>>(std::istream& ulaz,Color& obj)
 {
-    ulaz>>obj.R>>obj.G>>obj.B;
+    ulaz>>obj.R;
+    ulaz>>obj.G;
+    ulaz>>obj.B;
     return ulaz;
 }
 std::ostream& operator<<(std::ostream& izlaz,Color& obj)
 {
-    izlaz<<obj.R<<" "<<obj.G<<" "<<obj.B<<"/n";
+    izlaz<<obj.R<<" "<<obj.G<<" "<<obj.B<<" ";
     return izlaz;
 }
 Color& Color::operator!()
