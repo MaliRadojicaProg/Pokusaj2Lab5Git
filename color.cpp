@@ -28,3 +28,10 @@ std::ostream& operator<<(std::ostream& izlaz,Color& obj)
     izlaz<<obj.R<<" "<<obj.G<<" "<<obj.B<<"/n";
     return izlaz;
 }
+Color& Color::operator!()
+{
+    R=255-R;
+    G=255-G;
+    B=255-B;
+    return *this;
+}

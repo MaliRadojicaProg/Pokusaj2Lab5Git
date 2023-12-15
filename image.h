@@ -12,6 +12,7 @@ class Image{
         void setPicture();
         void picLoad();
         void picShow();
+        void invert();
    
 };
 template <class Pixel> 
@@ -75,7 +76,17 @@ Image<Pixel>::Image()
         }
     }
     
-
+    template <class Pixel>
+    void Image<Pixel>::invert()
+    {
+        for(int i=0;i<height;i++)
+        {
+            for(int j=0;j<width;j++)
+            {
+                Picture[i][j]=!Picture[i][j];
+            }
+        }
+    }
 
     
 
