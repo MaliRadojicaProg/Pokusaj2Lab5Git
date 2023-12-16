@@ -25,7 +25,7 @@ std::istream& operator>>(std::istream& ulaz,Color& obj)
 }
 std::ostream& operator<<(std::ostream& izlaz,Color& obj)
 {
-    izlaz<<obj.R<<" "<<obj.G<<" "<<obj.B<<"/n";
+    izlaz<<"R:"<<obj.R<<" "<<"G:"<<obj.G<<" "<<"B:"<<obj.B;
     return izlaz;
 }
 Color& Color::operator!()

@@ -54,7 +54,7 @@ Image<Pixel>::Image()
     template <class Pixel>
     void Image<Pixel>::picLoad()
     {
-        std::cout<<"Ucitati templejtSliku\n";
+        std::cout<<"Unesite Sliku\n";
         for(int i=0;i<height;i++)
         {
             for(int j=0;j<width;j++)
