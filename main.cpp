@@ -5,38 +5,46 @@ int main()
 {
     char cnf;
     std::cout<<"Kompajliranje uspesno!\n";
-    Image<int> crnoBelaSlika;
+    // Image<int> crnoBelaSlika;
+    Image<int>* devcrnoBelaSlika=new Image<int>;
+    Image<Color>* devslikaUBoji=new Image<Color>;
     std::cout<<"Unesite crno belu sliku (1/0):\n";
     
-    crnoBelaSlika.picLoad();
-    crnoBelaSlika.picShow();
+    devcrnoBelaSlika->picLoad();
+    devcrnoBelaSlika->picShow();
 
-    Image<Color> slikaUBoji;
+    // Image<Color> slikaUBoji;
     std::cout<<"Unesite sliku u boji (0-255)\n";
      
-    slikaUBoji.picLoad();
-    slikaUBoji.picShow();
+    devslikaUBoji->picLoad();
+    devslikaUBoji->picShow();
+    std::cout<<"Kopija slikeUBoji";
+     Image<Color>* kopijaSlike=new Image<Color>;
+    kopijaSlike=devslikaUBoji;
+    kopijaSlike->picShow();
+    std::cin.ignore();
     std::cout<<"Da li zelite da komplementirate sliku (Y/N)?\n";
-    // Image<Color> kopijaSlike;
-    // kopijaSlike=slikaUBoji;
-    // kopijaSlike.picShow();
     std::cin>>cnf;
+    std::cin.ignore();
     if(cnf=='y')
     {
-        crnoBelaSlika.invert();
-        crnoBelaSlika.picShow();
+        devcrnoBelaSlika->invert();
+        devcrnoBelaSlika->picShow();
         
-        slikaUBoji.invert();
-        slikaUBoji.picShow();
-        cnf='0';
+        devslikaUBoji->invert();
+        devslikaUBoji->picShow();
+      
     }
     else if(cnf=='n')
     {
         std::cout<<"ok\n";
     }
-    else{
-        exit(1);
-    }
-
+    // else{
+    //     exit(0);
+    // }
+    std::cout<<"ifend";
+    delete devcrnoBelaSlika;
+    // delete devslikaUBoji;
+    delete kopijaSlike;
     return 1;
 }
