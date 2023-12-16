@@ -19,20 +19,23 @@ int main()
     // file.close();
     // Image<Color> Boja;
     // Boja.picLoad();
+    Color boj;
     Image<Color> fileBoja;
     int x;
-   std::ifstream fileO;
-    fileO.open("boje.txt");
-    if(fileO.is_open())
+   std::ifstream fileB;
+    fileB.open("boje.txt");
+    if(fileB.is_open())
     {
-        fileO>>x;
+        fileB>>x;
         // fileO>>fileBoja;                    //cout<<
                                     //cin>>
 
     }
-    std::cout<<x<<"\n";
+    // std::cout<<x<<"\n";
+    fileBoja.picLoad();
     fileBoja.picShow();
-    // std::cin>>fileBoja;
+    std::cout<<boj;
+    std::cin>>boj;
 
     return 1;
 }

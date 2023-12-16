@@ -1,4 +1,6 @@
+#pragma once
 #include <iostream>
+#include <fstream>
 template <class Pixel>
 class Image{
     private:
