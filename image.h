@@ -13,8 +13,43 @@ class Image{
         void picLoad();
         void picShow();
         void invert();
+        // void check();
+       Image& operator+(Image& obj);
    
 };
+// template <class Pixel>
+// void Image<Pixel>::check()
+// {
+//     for(int i=0;i<height;i++)
+//     {
+//         for(int j=0;j<width;j++)
+//         {
+//             if(Picture[i][j]>1)
+//             {
+//                 Picture[i][j]!=Picture[i][j];
+//             }
+//         }
+//     }
+// }
+template <class Pixel>
+ Image<Pixel>& Image<Pixel>::operator+(Image& obj)
+{
+if(height==obj.height && width==obj.width)
+{
+    for(int i=0;i<height;i++)
+    {
+        for(int j=0;j<width;j++)
+        {
+            Picture[i][j]=Picture[i][j]+obj.Picture[i][j];
+        }
+    }
+    return *this;
+}
+else{
+    throw std::invalid_argument("Dimenzije se ne poklapaju!\n");
+}
+
+}
 template <class Pixel> 
 Image<Pixel>::Image()
     :height(2),width(2)
@@ -32,6 +67,7 @@ Image<Pixel>::Image()
    template <class Pixel> 
    Image<Pixel>::~Image()
     {
+        std::cout<<"Destruktor pozvan\n";
         for(int i=0;i<height;i++)
         {
             delete[] Picture[i];
@@ -60,6 +96,10 @@ Image<Pixel>::Image()
             for(int j=0;j<width;j++)
             {
                 std::cin>>Picture[i][j];
+                // if(Picture[i][j]>1)
+                // {
+                //     Picture[i][j]=!Picture[i][j];
+                // }
             }
         }
     }

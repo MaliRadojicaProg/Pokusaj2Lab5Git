@@ -18,7 +18,7 @@ int main()
      
     devslikaUBoji->picLoad();
     devslikaUBoji->picShow();
-    std::cout<<"Kopija slikeUBoji";
+    std::cout<<"Kopija slikeUBoji\n";
      Image<Color>* kopijaSlike=new Image<Color>;
     kopijaSlike=devslikaUBoji;
     kopijaSlike->picShow();
@@ -39,12 +39,21 @@ int main()
     {
         std::cout<<"ok\n";
     }
+    Image<int>* zbirImage=new Image<int>;
+    zbirImage->picLoad();
+    Image<int>* noviZbir=new Image<int>(*zbirImage+*devcrnoBelaSlika);
+    Image<Color>* dod=new Image<Color>(*kopijaSlike+*devslikaUBoji);
+    noviZbir->picShow();
+    dod->picShow();
     // else{
     //     exit(0);
     // }
-
-    delete devcrnoBelaSlika;
+    delete noviZbir;
+    delete dod;
+    // delete zbirImage;
+    // delete devcrnoBelaSlika;
     // delete devslikaUBoji;
-    delete kopijaSlike;
+    // delete kopijaSlike;
+    // delete devslikaUBoji;
     return 1;
 }
