@@ -42,7 +42,7 @@ int main()
     // else{
     //     exit(0);
     // }
-    std::cout<<"ifend";
+
     delete devcrnoBelaSlika;
     // delete devslikaUBoji;
     delete kopijaSlike;
